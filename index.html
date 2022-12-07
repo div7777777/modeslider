@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="body">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+}
+.container{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 700px;
+}
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 80px;
+    width: 250px;
+    box-shadow: 1px 1px 2em rgba(20,20,20,0.4);
+    border-radius: 50px;
+    background: linear-gradient(90deg,rgba(200,200,200,0.9),rgba(20,20,20, 0.9)); 
+}
+.sun{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border: none;
+    border-radius: 50px;
+    background: none;
+}
+.moon{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border: none;
+    border-radius: 50px;
+    background: none;
+}
+.colorwhite{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.colorblack{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    </style>
+    <div class="container">
+        <div class="item">
+            <!-- -->
+                <button class="sun"><img class="colorwhite" src="https://img.icons8.com/ios-filled/85/ffff00/sun--v1.png"/></button>
+                <button class="moon"><img class="colorblack" src="https://img.icons8.com/ios-filled/70/ffffff/do-not-disturb-2.png"/></button>
+        </div>
+    </div>
+<script>
+    const mySun = document.querySelector(".sun");
+const myMoon = document.querySelector(".moon");
+const myScrean = document.querySelector(".body");
+
+mySun.addEventListener("click", ()=>{
+ myScrean.style.background = "white";
+ mySun.style.transform = "translateX(50px)";
+ myMoon.style.transform = "translateX(0px)";
+ mySun.style.opacity = "0";
+ myMoon.style.opacity = "1"
+ mySun.style.transition = "0.7s"
+});
+
+myMoon.addEventListener("click", ()=>{
+myScrean.style.background = "black";
+myMoon.style.transform = "translateX(-50px)";
+mySun.style.transform = "translateX(0px)";
+mySun.style.opacity = "1";
+myMoon.style.opacity = "0";
+myMoon.style.transition = "0.9s"
+});
+</script>
+    <script src="code.js"></script>
+</body>
+</html>
